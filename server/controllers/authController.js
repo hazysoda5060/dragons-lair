@@ -29,4 +29,8 @@ module.exports = {
         req.session.user = foundUser[0]
         res.send(req.session.user)
     },
+    logout: (req, res) => {
+        req.session.destroy()
+        return res.sendStatus(200)
+    },
 }
